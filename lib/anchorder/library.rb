@@ -1,11 +1,4 @@
 module Anchorder
-
-  class << self
-    def library
-      @library ||= []
-    end
-  end
-
   class Library
     class << self
       def add_chord(&block)

@@ -1,15 +1,24 @@
 module Anchorder
 
-	class << self
-		def chord(&block)
-      Chord.new(&block)
-		end
-	end
-
 	class Chord
-    def initialize(&block)
+
+    attr_accessor :tuning
+
+    def initialize(tuning=Anchorder.tuning, &block)
       instance_eval(&block)
+      @tuning = tuning
       @symbol = name.to_sym unless symbol
+      define_strings
+    end
+
+    def define_strings
+      @tuning.each_with_index do |tune, position|
+        method_name = "#{tune}_string".to_sym
+        Chord.send(:define_method, method_name) do
+          @coordinates[position]
+        end
+        Chord.send(:alias_method, "play_#{tune}".to_sym,method_name)
+      end
     end
 
     def name(val=nil)
