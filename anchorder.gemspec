@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Anchorder::VERSION
   spec.authors       = ["Ejay Canaria"]
   spec.email         = ["ejaypcanaria@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = %q{Simple guitar chord generator library for Ruby.}
+  spec.description   = %q{The simpliest way to turn letters into human readable guitar chords.}
+  spec.homepage      = "http://github.com/ejaypcanaria/anchorder"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
@@ -20,4 +20,5 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "rspec", "~> 3.0"
 end
