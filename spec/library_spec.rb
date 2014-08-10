@@ -1,17 +1,39 @@
 require 'spec_helper'
 
-
 describe Anchorder::Library do
 
-  describe ".add_chord" do
+  before :each do
+    chord_files = ['tmp/e_chords.rb']
+    reader = double('File',
+                basename: 'e_chords.rb',
+                read: %q{
+                  add_chord do
+                    name        "E"
+                    coordinates [0, 2, 2, 1, 0, 0]
+                  end
+                  })
+    Anchorder.library = Anchorder::Library.load_from_chord_files(chord_files, reader)
+  end
+
+  describe "#add_chord" do
     it "adds the chord to the chord library" do
-      chord = Anchorder::Library.add_chord do
+      Anchorder::library
+      chord = Anchorder::library.add_chord do
         name "G"
-        symbol :G
         coordinates [3, 2, 0, 0, 3, 3]
       end
 
-      expect(Anchorder.library).to include chord
+      expect(Anchorder.library.chords).to include chord
+    end
+  end
+
+  describe ".load_from_chord_files" do
+    it "reads a chord file and adds it to the library" do
+      expect(Anchorder.library.chords.first.name).to eq "E"
+    end
+
+    it "dynamically creates chord constants" do
+
     end
   end
 end

@@ -4,10 +4,10 @@ module Anchorder
 
     attr_accessor :tuning
 
-    def initialize(tuning=Anchorder.tuning, &block)
+    def initialize(tuning, &block)
       instance_eval(&block)
       @tuning = tuning
-      @symbol = name.to_sym unless symbol
+      @symbol = name.to_sym unless @symbol
       define_strings
     end
 

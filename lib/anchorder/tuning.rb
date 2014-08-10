@@ -1,7 +1,8 @@
 module Anchorder
   class Tuning
     TUNES = {
-      standard: [:E, :A, :D, :G, :b, :e]
+      standard:   [:E,  :A, :D, :G, :b, :e],
+      half_step:  [:Eb, :Ab, :Db, :Gb, :bb, :eb]
     }
 
     private
