@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe Anchorder::Fretboard do
+describe Anchord::Fretboard do
 
   let(:g_chord) do
-    Anchorder.chord do
+    Anchord.chord do
       name "G"
       coordinates [3, 2, 0, 0, 3, 3]
     end
@@ -19,7 +19,7 @@ describe Anchorder::Fretboard do
     #                        "A |---|-*-|---|---|---|---|\n"\
     #                        "E |---|---|-*-|---|---|---|"
 
-    #   expect(Anchorder::Fretboard.play(g_chord)).to eq chord_chart_format
+    #   expect(Anchord::Fretboard.play(g_chord)).to eq chord_chart_format
     # end
   end
 
@@ -31,7 +31,7 @@ describe Anchorder::Fretboard do
                    "D |-0-|\n"\
                    "A |-2-|\n"\
                    "E |-3-|"
-      expect(Anchorder::Fretboard.play_as_tab(g_chord)).to eq tab_format
+      expect(Anchord::Fretboard.play_as_tab(g_chord)).to eq tab_format
     end
   end
 end

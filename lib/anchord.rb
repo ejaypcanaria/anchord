@@ -1,8 +1,8 @@
-Dir[File.dirname(__FILE__) + '/anchorder/**/*.rb']
-  .reject{|f| f[File.dirname(__FILE__) + '/anchorder/chords']}
+Dir[File.dirname(__FILE__) + '/anchord/**/*.rb']
+  .reject{|f| f[File.dirname(__FILE__) + '/anchord/chords']}
   .each {|file| require file }
 
-module Anchorder
+module Anchord
   class << self
     attr_writer :library, :tuning
 
@@ -10,7 +10,7 @@ module Anchorder
       @library ||= Library.load_from_chord_files
     end
 
-    def chord(tuning=Anchorder.tuning, &block)
+    def chord(tuning=Anchord.tuning, &block)
       Chord.new(tuning, &block)
     end
 
@@ -19,8 +19,7 @@ module Anchorder
     end
 
     def chord_files
-      Dir[File.dirname(__FILE__) + '/anchorder/chords/**/*_chords.rb']
+      Dir[File.dirname(__FILE__) + '/anchord/chords/**/*_chords.rb']
     end
   end
-
 end

@@ -1,5 +1,4 @@
-module Anchorder
-
+module Anchord
   class Fretboard
     class << self
       def play_as_tab(chord)
@@ -10,5 +9,4 @@ module Anchorder
       end
     end
   end
-
 end

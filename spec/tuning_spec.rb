@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe Anchorder::Tuning do
+describe Anchord::Tuning do
 
   it "has tuning methods" do
-    expect(Anchorder::Tuning.methods(false)).to include *Anchorder::Tuning::TUNES.keys
+    expect(Anchord::Tuning.methods(false)).to include *Anchord::Tuning::TUNES.keys
   end
 
 end

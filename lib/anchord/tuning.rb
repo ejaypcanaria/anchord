@@ -1,4 +1,4 @@
-module Anchorder
+module Anchord
   class Tuning
     TUNES = {
       standard:   [:E,  :A, :D, :G, :b, :e],

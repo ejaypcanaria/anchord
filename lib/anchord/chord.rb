@@ -1,5 +1,4 @@
-module Anchorder
-
+module Anchord
 	class Chord
 
     attr_accessor :tuning

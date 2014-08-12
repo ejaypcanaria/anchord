@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'anchorder/version'
+require 'anchord/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "anchorder"
-  spec.version       = Anchorder::VERSION
+  spec.name          = "anchord"
+  spec.version       = Anchord::VERSION
   spec.authors       = ["Ejay Canaria"]
   spec.email         = ["ejaypcanaria@gmail.com"]
   spec.summary       = %q{Simple guitar chord generator library for Ruby.}
   spec.description   = %q{The simpliest way to turn letters into human readable guitar chords.}
-  spec.homepage      = "http://github.com/ejaypcanaria/anchorder"
+  spec.homepage      = "http://github.com/ejaypcanaria/anchord"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")

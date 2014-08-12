@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe Anchorder do
+describe Anchord do
   let(:chord) do
-    Anchorder.chord do
+    Anchord.chord do
       name        "G"
       coordinates [3, 2, 0, 0, 3, 3]
     end
@@ -10,7 +10,7 @@ describe Anchorder do
 
   describe ".chord" do
     it "creates a chord object" do
-      expect(chord).to be_a Anchorder::Chord
+      expect(chord).to be_a Anchord::Chord
       expect(chord.name).to eq "G"
       expect(chord.coordinates).to eq [3, 2, 0, 0, 3, 3]
     end

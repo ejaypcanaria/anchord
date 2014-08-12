@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe Anchorder::Chord do
+describe Anchord::Chord do
 
   let(:chord) do
-    Anchorder.chord do
+    Anchord.chord do
       name "G"
       coordinates [3, 2, 0, 0, 3, 3]
     end
