@@ -15,7 +15,7 @@ module Anchord
     end
 
     def tuning
-      @tuning ||= Tuning::TUNES[:standard]
+      @tuning ||= Tuning.standard
     end
 
     def chord_files
