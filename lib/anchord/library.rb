@@ -1,16 +1,32 @@
 module Anchord
   class Library
-    attr_reader :chords
 
     def initialize(chords=[])
-      @chords = chords
+      @chords_hash = {}
+      populate_chords_hash unless chords.empty?
     end
 
     def add_chord(tuning=Anchord.tuning, &block)
       chord = Chord.new(tuning, &block)
-      @chords << chord
+      @chords_hash[chord.symbol] = chord
       chord
     end
+
+    def [](key)
+      @chords_hash[key]
+    end
+
+    def chords
+      @chords_hash.values
+    end
+
+    private
+
+      def populate_chords_hash
+        chords.inject(@chords_hash) do |chords_hash, chord|
+          chords_hash[chord.symbol] = chord
+        end
+      end
 
     class << self
       def load_from_chord_files(chord_files=Anchord.chord_files, reader=File)

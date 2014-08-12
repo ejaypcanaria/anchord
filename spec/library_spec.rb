@@ -31,9 +31,11 @@ describe Anchord::Library do
     it "reads a chord file and adds it to the library" do
       expect(Anchord.library.chords.first.name).to eq "E"
     end
+  end
 
-    it "dynamically creates chord constants" do
-
+  describe ".[]" do
+    it "access the chords array inside the library using chord symbol as a key" do
+      expect(Anchord.library[:E]).to eq Anchord.library.chords.find {|chord| chord.symbol == :E}
     end
   end
 end
