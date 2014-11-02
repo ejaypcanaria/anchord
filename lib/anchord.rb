@@ -18,6 +18,15 @@ module Anchord
       @tuning ||= Tuning.standard
     end
 
+    def play(chord_sym)
+      chord = library[chord_sym]
+      unless chord
+        puts "We cannot find the chord '#{chord_sym}' in our chord library."
+      else
+        puts Anchord::Fretboard.play_as_tab chord
+      end
+    end
+
     def chord_files
       Dir[File.dirname(__FILE__) + '/anchord/chords/**/*_chords.rb']
     end
