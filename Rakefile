@@ -1,5 +1,5 @@
 require "bundler/gem_tasks"
 
-task :spec do
+task default: :spec do
   system 'rspec --color --format documentation'
 end
