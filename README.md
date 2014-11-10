@@ -1,4 +1,5 @@
 # Anchord
+[![Build Status](https://travis-ci.org/ejaypcanaria/anchord.svg?branch=master)](https://travis-ci.org/ejaypcanaria/anchord)
 
 The geekiest way to print guitar chords. Simple and just works.
 
@@ -27,6 +28,18 @@ Or install it yourself as:
 1. Include Anchord upon running IRB: `irb -Ilib -r anchord`
 2. Use `Anchord.play [chord_symbol]` to play a chord: `Anchord.play :G`
 
+### Adding additional chords to the library
+
+1. Create a file that ends with `_chords.rb` and put it under `lib/achord/chords` directory.
+2. Add a chord using the following DSL:
+
+```ruby
+add_chord do
+	name 			"chord name"
+	coordinate 		[1,2,3,4,5,6] # Finger position with the following string format: E A D G B e
+end
+```
+
 ## Contributing
 
 1. Fork it ( https://github.com/ejaypcanaria/anchord/fork )
@@ -34,15 +47,3 @@ Or install it yourself as:
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
-
-### Adding additional chords to the library
-
-1. Create a file that ends with `_chords.rb` and put it under `lib/achord/chords` directory.
-2. Add a chord using the following DSL:
-
-```
-add_chord do
-	name 			"chord name"
-	coordinate 		[1,2,3,4,5,6] # Finger position with the following string format: E A D G B e
-end
-```
